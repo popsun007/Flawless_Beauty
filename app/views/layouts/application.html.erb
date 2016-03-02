@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FlawlessBeauty</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<%= render partial: 'layouts/header' %>
+	<body>
+
+<%= render partial: 'layouts/nav' %>
 
 <%= yield %>
 
-</body>
+		<!-- SCRIPTS : begin -->
+		<script src="library/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="library/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+		<script src="library/js/jquery.ba-outside-events.min.js" type="text/javascript"></script>
+		<script src="library/js/owl.carousel.min.js" type="text/javascript"></script><!-- Carousel -->
+		<script src="library/js/jquery.magnific-popup.min.js" type="text/javascript"></script><!-- Lightbox -->
+		<script src="library/twitter/jquery.tweet.min.js" type="text/javascript"></script><!-- Twitter Feed -->
+		<script src="library/js/library.js" type="text/javascript"></script>
+		<script src="library/js/scripts.js" type="text/javascript"></script>
+		<!-- SCRIPTS : end -->
+
+	</body>
 </html>
