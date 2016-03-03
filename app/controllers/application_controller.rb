@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
 
   def services
   end
+
+  def about_us
+  end
+
+  def contact
+  end
 end
