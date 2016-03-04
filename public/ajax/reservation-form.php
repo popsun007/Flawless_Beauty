@@ -7,7 +7,7 @@
 ----------------------------------------------------------------------------- */
 
 // email where the contact form messages will be sent
-$email_to = 'example@example.com';
+$email_to = 'hello@flawlessbeautysalon.us';
 
 // sucess message
 $success_msg = 'Message sent successfully!';

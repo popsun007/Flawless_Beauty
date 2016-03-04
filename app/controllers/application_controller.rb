@@ -15,4 +15,7 @@ class ApplicationController < ActionController::Base
 
   def contact
   end
+
+  def search
+  end
 end
