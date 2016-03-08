@@ -1,9 +1,17 @@
-<h1 style="color: green;">Reservation Confirmation</h1>
-<h2>Thank you for giving us an opportunity to be your beautician.</h2>
-<h3> We will contact to you shortly to confirm your reservation possibility</h3>
-<h3>Name: <%= @infos["reservation-name"] %></h3>
-<h3>Phone#: <%= @infos["reservation-phone"] %></h3>
-<h3>Email: <%= @infos["reservation-email"] %></h3>
-<h3>Date: <%= @infos["reservation-date"] %></h3>
-<h3>Time: <%= @infos["reservation-time"] %></h3>
-<h3>Note: <span style="color: red"><%= @infos["reservation-note"] %> </span></h3>
+<h3>Thank you for giving us an opportunity to be your beautician.</h3>
+<h4> We will contact to you shortly to confirm your reservation possibility.</h4>
+
+<h4>Appointment Detail:</h4>
+<p>Name: <%= @infos["reservation-name"] %></p>
+<p>Phone#: <%= @infos["reservation-phone"] %></p>
+<p>Email: <%= @infos["reservation-email"] %></p>
+<p>Date: <%= @infos["reservation-date"] %></p>
+<p>Time: <%= @infos["reservation-time"] %></p>
+<p>Service: <%= @infos["reservation-services"] %></p>
+<p>Note:><%= @infos["reservation-note"] %> </span></p>
+
+<h4>Contact Us:</h4>
+<p>Call us: 5104988843</p>
+<p>Email: <a href="mailto:hello@flawlessbeautysalon.us">hello@flawlessbeautysalon.us</a></p>
+<p>We are here: 43737 Boscell Rd Fremont, CA 94538</p>
+<p>Hours: Everyday 10:00 - 19:00</p>
