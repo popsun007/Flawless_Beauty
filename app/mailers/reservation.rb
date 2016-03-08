@@ -8,6 +8,6 @@ class Reservation < ApplicationMailer
   def reservation_confirmation
     @greeting = "Thank you for giving us an opportunity to be your beautician. We will contact to you shortly to confirm your reservation possibility"
 
-    mail to: "frank@franksun.us"
+    mail to: "hello@flawlessbeautysalon.us"
   end
 end

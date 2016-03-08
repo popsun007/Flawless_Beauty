@@ -1,5 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ""
-  # default from: "hello@flawlessbeautysalon.us"
+  default from: "flawlessbeautyfremont@gmail.com"
   layout 'mailer'
 end
