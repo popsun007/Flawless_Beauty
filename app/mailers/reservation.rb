@@ -10,4 +10,10 @@ class Reservation < ApplicationMailer
     @infos = infos
     mail to: "hello@flawlessbeautysalon.us", subject: "Appointment Request"
   end
+
+  def reservation_confirmation_to_customer(infos)
+    # @greeting = "Thank you for giving us an opportunity to be your beautician. We will contact to you shortly to confirm your reservation possibility"
+    @infos = infos
+    mail to: infos["reservation-email"], subject: "Reservation Confirmation"
+  end
 end
