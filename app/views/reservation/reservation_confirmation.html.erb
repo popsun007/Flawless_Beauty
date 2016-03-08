@@ -1,5 +1,9 @@
-<h1>Reservation#reservation_confirmation</h1>
+<h1 style="color: green;">Reservation Confirmation</h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/reservation/reservation_confirmation.html.erb
-</p>
+<h2>Guest information:</h2>
+<h3>Name: <%= @infos["reservation-name"] %></h3>
+<h3>Phone#: <%= @infos["reservation-phone"] %></h3>
+<h3>Email: <%= @infos["reservation-email"] %></h3>
+<h3>Date: <%= @infos["reservation-date"] %></h3>
+<h3>Time: <%= @infos["reservation-time"] %></h3>
+<h3 style="color: darkgrey">Note: <%= @infos["reservation-note"] %></h3>

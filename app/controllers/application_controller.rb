@@ -23,8 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def success
-    Reservation.reservation_confirmation.deliver
-
+    Reservation.reservation_confirmation(params).deliver
     # redirect_to "success"
   end
 end
