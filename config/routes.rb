@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get 'contact.html', to: 'application#contact' 
   get 'search-results', to: 'application#search' 
   get 'ajax/reservation-form.html', to: 'reservation#index' 
-  post 'book', to: 'reservation#send_email' 
+  post 'book', to: 'application#success' 
+  get 'book', to: 'application#index' 
+  
 end

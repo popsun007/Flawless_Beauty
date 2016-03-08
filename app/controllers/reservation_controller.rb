@@ -4,6 +4,6 @@ class ReservationController < ApplicationController
   end
 
   def send_email
-    render :text =>'reservation_confirmation.html.erb'
+    render :layout => false
   end
 end

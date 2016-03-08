@@ -6,7 +6,6 @@ class Reservation < ApplicationMailer
   #   en.reservation.reservation_confirmation.subject
   #
   def reservation_confirmation
-    puts params
     @greeting = "Thank you for giving us an opportunity to be your beautician. We will contact to you shortly to confirm your reservation possibility"
 
     mail to: "frank@franksun.us"
