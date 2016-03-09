@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
     Reservation.reservation_confirmation(params).deliver
     Reservation.reservation_confirmation_to_customer(params).deliver
   end
+
+  def message
+    Reservation.reservation_message(params).deliver
+  end
 end

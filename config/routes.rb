@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'search-results', to: 'application#search' 
   get 'ajax/reservation-form.html', to: 'reservation#index' 
   post 'book', to: 'application#success' 
-  get 'book', to: 'application#index' 
-  
+  post 'contact-message', to: 'application#message'
+  match "*path" => redirect("/"), :via => [:get]
 end
