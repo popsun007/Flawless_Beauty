@@ -17,19 +17,19 @@
 					<button class="header-menu-toggle" type="button"><i class="fa fa-bars"></i>MENU</button>
 					<ul>
 						<li class="m-active">
-							<span><a href="home">Home</a></span>
+							<span><%= link_to "home", "/home" %></span>
 						</li>
 						<li>
-							<span><a href="about-us">About Us</a></span>
+							<span><%= link_to "about-us", "/about-us" %></span>
 						</li>
 						<li>
-							<span><a href="services">Services</a></span>
+							<span><%= link_to "services", "/services" %></span>
 						</li>
 						<li>
-							<span><a href="/">Products</a></span>
+							<span><%= link_to "products", "/products" %></span>
 						</li>
 						<li>
-							<span><a href="contact">Contact</a></span>
+							<span><%= link_to "contact", "/contact" %></span>
 						</li>
 					</ul>
 				</nav>
@@ -59,7 +59,7 @@
 
 				<!-- HEADER RESERVATION : begin -->
 				<div class="header-reservation">
-					<a href="reservation" class="c-button m-open-ajax-modal">Make a Reservation</a>
+					<a href="/reservation" class="c-button m-open-ajax-modal">Make a Reservation</a>
 				</div>
 				<!-- HEADER RESERVATION : end -->
 
