@@ -1,18 +1,22 @@
 <div id="wrapper">
 	<div id="core" class="core-bg-1">
-		<div id="page-header">
+		<div id="page-header" style="margin-bottom: 40px">
 			<div class="container">
 				<h1>PRODUCTS</h1>
 				<ul class="breadcrumbs">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="/home">Home</a></li>
 					<li>Products</li>
+					<li><a href="/products/new">Add Product</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="container">
 			<div id="page-content">
-				<div class="various-content">
-					<h4>This is a pleace holder pleace holder pleace holder pleace holder pleace holder pleace holder pleace holder pleace holder pleace holder pleace holder pleace holder</h1>
+				<div class="various-content" >
+					<% @products.each do |product| %>
+						<%= link_to product.name, product %></p>
+						<p><%= product.description %></p>
+					<% end %>
 				</div>
 			</div>
 		</div>

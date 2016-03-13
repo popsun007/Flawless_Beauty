@@ -1,0 +1,29 @@
+<div id="wrapper">
+	<div id="core" class="core-bg-1">
+		<div id="page-header" style="margin-bottom: 40px">
+			<div class="container">
+				<h1>PRODUCTS</h1>
+				<ul class="breadcrumbs">
+					<li><a href="/home">Home</a></li>
+					<li><a href="/products">Products</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			<div id="page-content">
+				<div class="various-content">
+					<div>
+						<h4 style="color: green">
+							<% flash.each do |key, msg| %>
+								<%= content_tag :div, msg, class: "alert alert-info" %>
+							<% end %>
+						</h4>
+					</div>
+					<p><%= @product.name %></p>
+					<p><%= @product.description %></p>
+					<%= link_to "Edit", edit_product_path %>
+					<%= link_to "Delete", product_path, method: :delete, data: {confirm: "Are you sure to delete this product?"} %>
+				</div>
+			</div>
+		</div>
+	</div>
