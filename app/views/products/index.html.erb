@@ -35,6 +35,7 @@
 			<div id="page-content">
 				<div class="various-content" >
 					<% @products.each do |product| %>
+						<%= link_to (image_tag product.image.url(:medium )), product %></p>
 						<%= link_to product.name, product %></p>
 						<p><%= product.description %></p>
 					<% end %>
