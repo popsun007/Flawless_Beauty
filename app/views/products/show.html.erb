@@ -10,13 +10,24 @@
 		<div class="container">
 			<div id="page-content">
 				<div class="various-content">
-					<p><%= image_tag @product.image.url(:medium) %></p>
-					<p><%= @product.name %></p>
-					<p><%= @product.description %></p>
-					<br>
-					<p>Created by <%= @product.user.email %></p>
-					<%= link_to "Edit", edit_product_path %>
-					<%= link_to "Delete", product_path, method: :delete, data: {confirm: "Are you sure to delete this product?"} %>
+					<div class="row" id="product_show">
+					    <div class="col-md-8 col-md-offset-2">
+					        <div class="panel panel-default">
+						        <div class="panel-heading product_image">
+						  			<%= image_tag @product.image.url %>
+						  	    </div>
+						  	    <div class="panel-body">
+							  		<h3><%= @product.name %></h3>
+							  		<p><%= @product.description %></p>
+							  	</div>
+						  		<div class="panel-footer">
+							  		<p>Created by <%= @product.user.email %></p>
+							  		<%= link_to "Edit", edit_product_path, class: "btn btn-warning" %>
+							  		<%= link_to "Delete", product_path, method: :delete, data: {confirm: "Are you sure to delete this product?"}, class: "btn btn-danger" %>
+							  	</div>
+					  		</div>
+					    </div>
+					</div>
 				</div>
 			</div>
 		</div>
