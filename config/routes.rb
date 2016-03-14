@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   post 'book', to: 'application#success' 
   post 'contact-message', to: 'application#message'
   resources :products
+  root 'application#index'
   match "*path" => redirect("/"), :via => [:get]
 end
