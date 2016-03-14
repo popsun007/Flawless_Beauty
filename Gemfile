@@ -15,6 +15,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'masonry-rails', '0.2.1'
+gem 'aws-sdk'
 gem 'hirb'
 gem 'rails-footnotes', :group => :development
 group :development, :test do
