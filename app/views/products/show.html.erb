@@ -12,6 +12,8 @@
 				<div class="various-content">
 					<p><%= @product.name %></p>
 					<p><%= @product.description %></p>
+					<br>
+					<p>Created by <%= @product.user.email %></p>
 					<%= link_to "Edit", edit_product_path %>
 					<%= link_to "Delete", product_path, method: :delete, data: {confirm: "Are you sure to delete this product?"} %>
 				</div>
