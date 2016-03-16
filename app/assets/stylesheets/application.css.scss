@@ -115,3 +115,8 @@ nav {
 textarea {
 	min-height: 250px;
 }
+
+/*Wechat scan image will show when mouse hover*/
+
+ #wechat img { display:none; position: absolute; opacity: 1.0;}
+ #wechat a:hover img { display:inline; }
