@@ -1138,7 +1138,7 @@ $vertical-space: 24px;
 	// SIDEBAR LINKS
 	.sidebar-links {
 		.widget-content { padding-left: 20px; border-left: 1px solid transparent; }
-		ul > li { position: relative; margin-top: 5px; }
+		ul > li { position: relative; margin-top: 5px;}
 		ul > li:first-child { margin-top: 0; }
 		ul > li:before { content: ''; display: block; position: absolute; top: 12px; left: -20px; width: 10px; height: 2px; border-top: 1px solid transparent; }
 	}
