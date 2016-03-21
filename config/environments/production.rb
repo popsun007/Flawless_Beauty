@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Need for Devise
-  config.action_mailer.default_url_options = { host: 'http://www.flawlessbeautysalon.us', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'http://www.flawlessbeautyandslimming.com', port: 3000 }
 
   #Set papercilip to upload images to Amzaon S3
   config.paperclip_defaults = {
