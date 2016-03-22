@@ -1,3 +1,13 @@
+		<script type="text/javascript">
+			$(function() {
+			  return $('#products').imagesLoaded(function() {
+			    return $('#products').masonry({
+			      itemSelector: '.box',
+			      isFitWidth: true
+			    });
+			  });
+			});
+		</script>
 			<div id="page-header" style="margin-bottom: 40px">
 				<div class="nav container">
 					<h1>PRODUCTS</h1>
