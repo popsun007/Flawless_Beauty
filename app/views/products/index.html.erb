@@ -1,6 +1,7 @@
 		<script type="text/javascript">
 			$(function() {
 			  return $('#products').imagesLoaded(function() {
+			  	$('.loading').hide();
 			  	$('#container').show();
 			    return $('#products').masonry({
 			      itemSelector: '.box',
@@ -41,6 +42,9 @@
 			</div>
 
 		<div class="transitions-enabled" id="products">
+			<div class="loading">
+				<img src="http://happywheelsyoob.com/themes/agario//resources/images/loading.gif">
+			</div>
 			<div id="container" class="container" style="display: none;">
 				<div id="page-content">
 					<div class="various-content" >
