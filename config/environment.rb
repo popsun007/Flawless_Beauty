@@ -14,7 +14,7 @@ ActionMailer::Base.smtp_settings = {
   :port           => '587',
   :authentication => :login,
   :user_name => 'flawlessbeautyfremont@gmail.com',
-  :password => 'FB#salon8',
+  :password => 'FlawlessB#salon8',
   :enable_starttls_auto => true
 }
 
