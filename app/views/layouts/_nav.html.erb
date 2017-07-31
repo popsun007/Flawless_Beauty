@@ -5,7 +5,7 @@
 
 			<!-- HEADER BRANDING : begin -->
 			<div class="header-branding">
-				<a href="index.html"><img src="/images/logo.png" alt="FlawlessBeauty" data-hires="images/logo.2x.png" width="291"></a>
+				<a href="/index.html"><img src="/images/logo.png" alt="FlawlessBeauty" data-hires="images/logo.2x.png" width="291"></a>
 			</div>
 			<!-- HEADER BRANDING : end -->
 
@@ -27,7 +27,12 @@
 						</li>
 						<li>
 							<span><%= link_to "products", "/products" %></span>
+						</li>						
+						<% if user_signed_in? %>
+						<li>
+							<span><%= link_to "calendar", "/calendars" %></span>
 						</li>
+						<% end %>
 						<li>
 							<span><%= link_to "contact", "/contact" %></span>
 						</li>
@@ -44,11 +49,13 @@
 
 				<button class="header-panel-toggle" type="button"><i class="fa"></i></button>
 
-				<!-- HEADER RESERVATION : begin -->
+				<!-- HEADER APPOINTMENT : begin -->
 				<div class="header-reservation">
-					<a href="/reservation" class="c-button m-open-ajax-modal">Make a Reservation</a>
+				<% if user_signed_in? %>
+					<a href="/reservation" class="c-button m-open-ajax-modal">Make an Appointment</a>
+				<% end %>
 				</div>
-				<!-- HEADER RESERVATION : end -->
+				<!-- HEADER APPOINTMENT : end -->
 
 				<!-- HEADER CONTACT : begin -->
 				<div class="header-contact">
@@ -77,7 +84,7 @@
 						<li>
 							<div class="item-inner">
 								<i class="ico fa fa-envelope-o"></i>
-								<a href="mailto:hello@flawlessbeautysalon.us"><strong>flawless@flawlessbeautyandslimming.com</strong></a>
+								<a href="mailto:flawless@flawlessbeautyandslimming.com"><strong>flawless@FlawlessBeautyAndsLimming.com</strong></a>
 							</div>
 						</li>
 						<!-- EMAIL : end -->
