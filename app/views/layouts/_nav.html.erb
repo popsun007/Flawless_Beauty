@@ -49,11 +49,13 @@
 
 				<button class="header-panel-toggle" type="button"><i class="fa"></i></button>
 
-				<!-- HEADER RESERVATION : begin -->
+				<!-- HEADER APPOINTMENT : begin -->
 				<div class="header-reservation">
-					<a href="/reservation" class="c-button m-open-ajax-modal">Make a Reservation</a>
+				<% if user_signed_in? %>
+					<a href="/reservation" class="c-button m-open-ajax-modal">Make an Appointment</a>
+				<% end %>
 				</div>
-				<!-- HEADER RESERVATION : end -->
+				<!-- HEADER APPOINTMENT : end -->
 
 				<!-- HEADER CONTACT : begin -->
 				<div class="header-contact">
