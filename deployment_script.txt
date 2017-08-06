@@ -1,0 +1,38 @@
+sudo apt-get update
+
+#Install rvm and prepackages
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
+
+sudo apt-get install software-properties-common
+sudo apt-add-repository -y ppa:rael-gc/rvm
+sudo apt-get update
+sudo apt-get install rvm
+
+#Install Ruby 2.2.1
+rvmsudo rvm install ruby-2.2.1
+
+#Install Passenger and Ngnix
+
+sudo apt-get install -y dirmngr gnupg
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+sudo apt-get install -y apt-transport-https ca-certificates
+
+sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main > /etc/apt/sources.list.d/passenger.list'
+sudo apt-get update
+
+sudo apt-get install -y nginx-extras passenger
+
+Edit /etc/nginx/nginx.conf and uncomment include /etc/nginx/passenger.conf;
+
+#check installation
+
+#After installation, please validate the install by running 
+sudo /usr/bin/passenger-config validate-install. For example:
+
+ * Checking whether this Phusion Passenger install is in PATH... ✓
+ * Checking whether there are no other Phusion Passenger installations... ✓
+All checks should pass. If any of the checks do not pass, please follow the suggestions on screen.
+
+#check whether Nginx has started the Passenger core processes. Run 
+sudo /usr/sbin/passenger-memory-stats. 
+You should see Nginx processes as well as Passenger processes. 
