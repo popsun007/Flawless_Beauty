@@ -36,3 +36,57 @@ All checks should pass. If any of the checks do not pass, please follow the sugg
 #check whether Nginx has started the Passenger core processes. Run 
 sudo /usr/sbin/passenger-memory-stats. 
 You should see Nginx processes as well as Passenger processes. 
+
+#Add a user for the app
+sudo adduser flawless_beauty
+
+#Ensure the user has your SSH key installed:
+sudo mkdir -p ~flawless_beauty/.ssh
+$ touch $HOME/.ssh/authorized_keys
+$ sudo sh -c "cat $HOME/.ssh/authorized_keys >> ~flawless_beauty/.ssh/authorized_keys"
+$ sudo chown -R flawless_beauty: ~flawless_beauty/.ssh
+$ sudo chmod 700 ~flawless_beauty/.ssh
+$ sudo sh -c "chmod 600 ~flawless_beauty/.ssh/*"
+
+#Install Postgres DB
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+
+#Create a new Role in PG
+sudo -u postgres createuser --interactive
+
+#Pull code 
+sudo mkdir -p /var/www/flawless_beauty
+sudo chown flawless_beauty: /var/www/flawless_beauty
+
+cd /var/www/flawless_beauty
+$ sudo -u flawless_beauty -H git clone git://github.com/username/myapp.git code
+
+#Login as the app's user
+sudo su flawless_beauty
+rvm use ruby-2.2.1
+
+#Install app dependencies
+cd /var/www/flawless_beauty/code
+bundle install --deployment --without development test(Maybe need to install libpq-dev first, ex: sudo apt-get install libpq-dev)
+
+#To prevent other users on the system from reading sensitive information belonging to the app
+chmod 700 config db
+chmod 600 config/database.yml config/secrets.yml
+
+
+#Compile Rails assets and run database migrations
+bundle exec rake assets:precompile db:migrate RAILS_ENV=production
+
+#Configuring Nginx and Passenger
+	Determine the Ruby command that Passenger should use
+
+passenger-config about ruby-command
+
+#Go back to the admin account
+exit
+
+#Create Nginx configuration file
+sudo vi /etc/nginx/sites-enabled/flawless_beauty.conf
+
+References: https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/

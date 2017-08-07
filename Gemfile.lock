@@ -141,7 +141,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    pg (0.21.0)
+    pg (0.20.0)
     public_suffix (2.0.5)
     rack (1.6.8)
     rack-test (0.6.3)
