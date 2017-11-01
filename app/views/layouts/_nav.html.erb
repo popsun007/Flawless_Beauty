@@ -28,7 +28,7 @@
 						<li>
 							<span><%= link_to "products", "/products" %></span>
 						</li>						
-						<% if user_signed_in? %>
+						<% if current_user.try(:admin?) %>
 						<li>
 							<span><%= link_to "calendar", "/calendars" %></span>
 						</li>
