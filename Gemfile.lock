@@ -256,7 +256,7 @@ DEPENDENCIES
   jquery-turbolinks
   masonry-rails (= 0.2.1)
   paperclip (~> 4.3, >= 4.3.6)
-  pg
+  pg (= 0.20)
   rails (= 4.2.1)
   rails-footnotes
   rails_12factor
