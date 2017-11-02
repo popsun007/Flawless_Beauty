@@ -7,10 +7,10 @@
 
 		  <div class="form-inputs">
 		    <%= f.input :first_name, required: true, autofocus: true %>
-		    <%= f.input :last_name, required: true, autofocus: true %>
-		    <%= f.input :phone, required: true, autofocus: true %>
-		    <%= f.input :birthday, required: false, autofocus: true %>
-		    <%= f.input :email, required: true, autofocus: true %>
+		    <%= f.input :last_name, required: true %>
+		    <%= f.input :phone, required: true %>
+		    <%= f.input :birthday, :order => [:month, :day], required: false %>
+		    <%= f.input :email, required: true %>
 		    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 		    <%= f.input :password_confirmation, required: true %>
 		  </div>
