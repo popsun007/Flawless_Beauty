@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Edit <%= @user.first_name %>&nbsp<%= @user.last_name %></h2>
+    <!-- TODO: Validation message -->
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :first_name, required: true, autofocus: true %>
+        <%= f.input :last_name, required: true %>
+        <%= f.input :phone, required: true %>
+        <%= f.input :birthday, :order => [:month, :day], required: false %>
+        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+        <%= f.input :password_confirmation, required: false %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+      </div>
+    <% end %>
+    <h3>Cancel my account</h3>
+    <%= link_to "Back", :back %>
+  </div>
+</div>
