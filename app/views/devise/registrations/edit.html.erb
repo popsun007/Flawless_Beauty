@@ -2,10 +2,14 @@
   <div class="col-md-6 col-md-offset-3">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= simple_form_for(@user) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :first_name, required: true, autofocus: true %>
+        <%= f.input :last_name, required: true %>
+        <%= f.input :phone, required: true %>
+        <%= f.input :birthday, :order => [:month, :day], required: false %>
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,7 +18,6 @@
 
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
         <%= f.input :password_confirmation, required: false %>
-        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
       </div>
 
       <div class="form-actions">
