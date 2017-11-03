@@ -4,4 +4,21 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products
+
+  def self.search(search)
+  	if search
+  		where(["
+  						first_name iLIKE ? 
+  						OR last_name iLIKE ? 
+  						OR phone LIKE ? 
+  						OR email iLIKE ?", 
+  						"%#{search + '%'}", 
+  						"%#{search + '%'}", 
+  						"%#{search + '%'}", 
+  						"%#{search + '%'}"
+  					])
+  	else
+  		all
+  	end
+  end
 end

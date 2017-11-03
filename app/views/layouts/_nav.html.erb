@@ -39,9 +39,11 @@
 						<li>
 							<span><%= link_to "contact", "/contact" %></span>
 						</li>
+						<% if current_user.blank? %>
 						<li>
 							<span><%= link_to "admin", "/users/sign_in" %></span>
 						</li>
+						<% end %>
 					</ul>
 				</nav>
 			</div>
