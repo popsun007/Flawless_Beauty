@@ -2,6 +2,35 @@
 	<div class="col-md-6 col-md-offset-3">
 		<h2 style="font-size: 25px;">Members</h2>
 		<br>
+			<div id="page-header" style="margin-bottom: 40px">
+		  	<div class="nav">
+	        <% if user_signed_in? %>
+	          <ul class="breadcrumbs">
+	            <li>
+	              <%= link_to "Home", root_path %>
+	            </li>
+	            <li>
+	              <%= link_to "New Member", new_user_path %>
+	            </li>
+	            <li>
+	              <%= link_to "Account", edit_user_registration_path %>
+	            </li>
+	            <li>
+	              <%= link_to "Sign Out", destroy_user_session_path,   method: :delete %>
+	            </li>
+	          </ul>
+	        <% else %>
+	          <ul class="breadcrumbs navbar-right">
+	            <li>
+	              <%= link_to "Home", root_path %>
+	            </li>
+	            <li>
+	              <%= link_to "Sign In", new_user_session_path %>
+	            </li>
+	          </ul>
+	        <% end %>
+				</div>
+			</div>
 		  <div class="table">
 		  	<%= form_tag users_path, :method => 'get' do %>
 		  		<%= text_field_tag :search, params[:search] %>
