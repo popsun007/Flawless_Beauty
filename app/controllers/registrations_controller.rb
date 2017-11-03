@@ -1,4 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
+  prepend_before_filter :require_no_authentication, only: [:cancel]
+
+def new
+	if current_user.try(:admin?)
+		build_resource({})
+    set_minimum_password_length
+    yield resource if block_given?
+    respond_with self.resource
+	end
+end
 
 private
 

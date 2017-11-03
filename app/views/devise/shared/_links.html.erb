@@ -1,4 +1,6 @@
-<%- if controller_name != 'sessions' %>
+<%- if controller_name != 'sessions' && current_user.try(:admin?) %>
+	<%= link_to "Sign Out", destroy_user_session_path,   method: :delete %><br />
+	<% else %>
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end -%>
 

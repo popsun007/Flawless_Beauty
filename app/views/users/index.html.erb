@@ -10,7 +10,7 @@
 	              <%= link_to "Home", root_path %>
 	            </li>
 	            <li>
-	              <%= link_to "New Member", new_user_path %>
+	              <%= link_to "New Member", "/my/users/sign_up" %>
 	            </li>
 	            <li>
 	              <%= link_to "Account", edit_user_registration_path %>
@@ -45,12 +45,12 @@
 			  	</tr>
 					<% @users.each do |member| %>
 				  	<tr>
-					  		<td><%= member.first_name %> &nbsp
-					  				<%= member.last_name %>
-					  		</td>
-					  		<td><%= member.phone %></td>
-					  		<td><%= member.email %></td>
-					  		<td><%= link_to "Edit", member %></td>
+				  		<td><%= member.first_name %> &nbsp
+				  				<%= member.last_name %>
+				  		</td>
+				  		<td><%= member.phone %></td>
+				  		<td><%= member.email %></td>
+				  		<td><%= link_to "Edit", member %></td>
 				  	</tr>
 					<% end %>
 				</table>

@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   def index
   	@users = User.search(params[:search])
   end
+
+  def new
+  end
 	
 	def show
   end
@@ -20,9 +23,9 @@ class UsersController < ApplicationController
 
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			redirect_to show
+			redirect_to @user
 		else
-			render edit
+			redirect_to edit_user_path
 		end
 	end
 
