@@ -84,6 +84,16 @@ class CalendarsController < ApplicationController
 private
 
   def appointment_params
-    params.permit("reservation-services", "reservation-name", "reservation-email", "reservation-phone", "reservation-date", "reservation-time", "reservation-duration", "reservation-note", "reservation-form", "reservation-services")
+    params.permit("reservation-services", 
+                  "reservation-name", 
+                  "reservation-email", 
+                  "reservation-phone", 
+                  "reservation-date", 
+                  "reservation-time", 
+                  "reservation-duration", 
+                  "reservation-note", 
+                  "reservation-form", 
+                  "reservation-services"
+                  )
   end
 end
