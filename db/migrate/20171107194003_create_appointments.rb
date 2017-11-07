@@ -5,6 +5,7 @@ class CreateAppointments < ActiveRecord::Migration
       t.string :duration
       t.string :service
       t.text :note
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

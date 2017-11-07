@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  time: 2017-11-06 22:53:06
+  time: 2017-11-07 11:40:15
   duration: MyString
   service: MyString
   note: MyText
+  user_id: 
 
 two:
-  time: 2017-11-06 22:53:06
+  time: 2017-11-07 11:40:15
   duration: MyString
   service: MyString
   note: MyText
+  user_id: 
