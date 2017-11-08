@@ -45,12 +45,11 @@
 			  	</tr>
 					<% @users.each do |member| %>
 				  	<tr>
-				  		<td><%= member.first_name %> &nbsp
-				  				<%= member.last_name %>
+				  		<td><%= link_to "#{member.first_name} #{member.last_name}", "/users/#{member.id}" %>
 				  		</td>
 				  		<td><%= member.phone %></td>
 				  		<td><%= member.email %></td>
-				  		<td><%= link_to "Edit", "/users/#{member.id}/edit" %><%= link_to "Show", "/users/#{member.id}" %></td>
+				  		<td><%= link_to "Edit", "/users/#{member.id}/edit" %></td>
 				  	</tr>
 					<% end %>
 				</table>
