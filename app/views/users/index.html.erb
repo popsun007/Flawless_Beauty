@@ -50,7 +50,7 @@
 				  		</td>
 				  		<td><%= member.phone %></td>
 				  		<td><%= member.email %></td>
-				  		<td><%= link_to "Edit", "/users/#{member.id}/edit" %></td>
+				  		<td><%= link_to "Edit", "/users/#{member.id}/edit" %><%= link_to "Show", "/users/#{member.id}" %></td>
 				  	</tr>
 					<% end %>
 				</table>

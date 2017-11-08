@@ -1,3 +1,8 @@
+<style type="text/css">
+	.cell{
+		white-space: nowrap;
+	}
+</style>
 <div class="container">
 	<div class="col-md-6 col-md-offset-3">
 		<h4 style="font-size: 25px;">Member</h4>
@@ -21,9 +26,29 @@
 			  		<td><%= @user.birthday %></td>
 			  	</tr>
 		  	</table>
+			<h5 style="font-size: 25px;">Appointment</h5>
+			  <table class="table table-hover">
+			  	<tr>
+			  		<th><strong>Appointment time</strong></th>
+			  		<th><strong>Service</strong></th>
+			  		<th><strong>Book time</strong></th>
+			  		<th><strong>Note</strong></th>
+			  		<th><strong>Delete</strong></th>
+			  	</tr>
+					<% @user.appointments.each do |appt| %>
+				  	<tr>
+				  		<td class="cell" "><%= appt.time.to_time.strftime('%m-%d %H:%M') if appt.time.present? %></td>
+				  		<td><%= appt.service %></td>
+				  		<td class="cell"><%= appt.created_at.to_time.strftime('%m-%d %H:%M') if appt.time.present? %></td>
+				  		<td><%= appt.note %></td>
+				  		<td><%= link_to "Edit", "/users/#{@user.id}/edit" %></td>
+				  	</tr>
+					<% end %>
+				</table>
 		  </div>
 		  <div class="form-actions">
 		    <%= link_to "Edit", edit_user_path, class: "btn btn-warning" %>
+		    <%= link_to "Back", :back, class: "btn btn-info" %>
 		  </div>
 	  </div>
 </div>

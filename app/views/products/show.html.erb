@@ -25,6 +25,7 @@
 							  		<p>Created by <%= @product.user.email %></p>
 							  		<%= link_to "Edit", edit_product_path, class: "btn btn-warning" %>
 							  		<%= link_to "Delete", product_path, method: :delete, data: {confirm: "Are you sure to delete this product?"}, class: "btn btn-danger" %>
+								    <%= link_to "Back", :back, class: "btn btn-info" %>
 							  	<% end %>
 							  	</div>
 					  		</div>

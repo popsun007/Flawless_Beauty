@@ -69,6 +69,7 @@ class CalendarsController < ApplicationController
     else
       begin 
         service.insert_event("flawlessbeautyfremont@gmail.com", event)
+        create_appointment(params, start_time)
       rescue Google::Apis::AuthorizationError => exception
           response = client.refresh!
         
@@ -77,9 +78,22 @@ class CalendarsController < ApplicationController
       end
       redirect_to "/calendars"
     end
-    
   end
 
+  def create_appointment(params, appt_time)
+    user = User.find_by(phone: params["reservation-phone"])
+    if params["reservation-services"].present?
+      service = params["reservation-services"].join(", ")
+    end
+
+    Appointment.create(
+                        time:     appt_time,
+                        duration: params["reservation-duration"],
+                        service:  service,
+                        note:     params["reservation-note"],
+                        user_id:  user.id
+                      )
+  end
 
 private
 
@@ -91,9 +105,7 @@ private
                   "reservation-date", 
                   "reservation-time", 
                   "reservation-duration", 
-                  "reservation-note", 
-                  "reservation-form", 
-                  "reservation-services"
+                  "reservation-note",
                   )
   end
 end
