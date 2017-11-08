@@ -41,7 +41,7 @@
 				  		<td><%= appt.service %></td>
 				  		<td class="cell"><%= appt.created_at.to_time.strftime('%m-%d %H:%M') if appt.time.present? %></td>
 				  		<td><%= appt.note %></td>
-				  		<td><%= link_to "Edit", "/users/#{@user.id}/edit" %></td>
+				  		<td><%= link_to "Delete", "/appointment/#{appt.cal_event_id}", method: :delete, data: {confirm: "Are you sure to delete this appointment?"} %></td>
 				  	</tr>
 					<% end %>
 				</table>
