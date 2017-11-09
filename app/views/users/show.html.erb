@@ -26,10 +26,11 @@
 			  		<td><%= @user.birthday %></td>
 			  	</tr>
 		  	</table>
-			<h5 style="font-size: 25px;">Appointment</h5>
+		  <% if @user.appointments.present? %>
+				<h5 style="font-size: 25px;">Appointment</h5>
 			  <table class="table table-hover">
 			  	<tr>
-			  		<th><strong>Appointment time</strong></th>
+			  		<th><strong>Time</strong></th>
 			  		<th><strong>Service</strong></th>
 			  		<th><strong>Book time</strong></th>
 			  		<th><strong>Note</strong></th>
@@ -45,6 +46,7 @@
 				  	</tr>
 					<% end %>
 				</table>
+			<% end %>
 		  </div>
 		  <div class="form-actions">
 		    <%= link_to "Edit", edit_user_path, class: "btn btn-warning" %>
