@@ -5,17 +5,18 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products
   has_many :appointments
+  has_many :packages
 
   def self.search(search)
   	if search
   		where(["
-  						first_name iLIKE ? 
-  						OR last_name iLIKE ? 
-  						OR phone LIKE ? 
-  						OR email iLIKE ?", 
-  						"%#{search + '%'}", 
-  						"%#{search + '%'}", 
-  						"%#{search + '%'}", 
+  						first_name iLIKE ?
+  						OR last_name iLIKE ?
+  						OR phone LIKE ?
+  						OR email iLIKE ?",
+  						"%#{search + '%'}",
+  						"%#{search + '%'}",
+  						"%#{search + '%'}",
   						"%#{search + '%'}"
   					])
   	else
