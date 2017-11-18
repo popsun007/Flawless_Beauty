@@ -26,7 +26,7 @@
 			  		<td><%= @user.birthday %></td>
 			  	</tr>
 		  	</table>
-		  <% if @user.appointments.present? %>
+		  <% if @user_appointments.present? %>
 				<h5 style="font-size: 25px;">Appointment</h5>
 			  <table class="table table-hover">
 			  	<tr>
@@ -36,7 +36,7 @@
 			  		<th><strong>Note</strong></th>
 			  		<th><strong>Delete</strong></th>
 			  	</tr>
-					<% @user.appointments.each do |appt| %>
+					<% @user_appointments.each do |appt| %>
 				  	<tr>
 				  		<td class="cell"><%= appt.time.to_time.strftime('%m-%d %H:%M') if appt.time.present? %></td>
 				  		<td><%= appt.service %></td>

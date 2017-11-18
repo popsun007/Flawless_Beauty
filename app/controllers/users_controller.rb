@@ -8,10 +8,11 @@ class UsersController < ApplicationController
 
   def new
   end
-	
+
 	def show
+		@user_appointments = @user.appointments.where("created_at > '#{Date.today}'")
   end
-	
+
 	def edit
 	end
 
