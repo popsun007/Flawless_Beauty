@@ -48,7 +48,7 @@
 				</table>
 			<% end %>
 		  <% if @user_packages.present? %>
-				<h5 style="font-size: 25px;">Appointment</h5>
+				<h5 style="font-size: 25px;">Package</h5>
 			  <table class="table table-hover">
 			  	<tr>
 			  		<th><strong>Name</strong></th>
@@ -58,17 +58,22 @@
 			  	</tr>
 					<% @user_packages.each do |package| %>
 				  	<tr>
-				  		<td class="cell"><%= package.time.to_time.strftime('%m-%d %H:%M') if package.time.present? %></td>
-				  		<td><%= package.service %></td>
-				  		<td class="cell"><%= package.created_at.to_time.strftime('%m-%d %H:%M') if package.time.present? %></td>
-				  		<td><%= link_to "Delete", "/appointment/#{package.id}" %></td>
+				  		<td class="cell"><%= package.name %></td>
+				  		<td><%= package.price %></td>
+				  		<td class="cell"><%= package.count %></td>
+							<td>
+									<%= link_to "Edit", edit_package_path(:id => package.id) %>
+									<% if package.count == 0 %>
+					  				<%= link_to "Delete", "/appointment/#{package.id}" %>
+									<% end %>
+							</td>
 				  	</tr>
 					<% end %>
 				</table>
 			<% end %>
 		  </div>
 		  <div class="form-actions">
-				<%= link_to "Add a Package", :back, class: "btn btn-info" %>
+				<%= link_to "Add a Package", new_package_path(:user_id => @user.id), class: "btn btn-info" %>
 		    <%= link_to "Edit", edit_user_path, class: "btn btn-warning" %>
 		    <%= link_to "Back", :back, class: "btn btn-info" %>
 		  </div>

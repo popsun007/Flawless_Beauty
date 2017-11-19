@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user_appointments = @user.appointments.where("created_at > '#{Date.today}'")
+		@user_packages = @user.packages
   end
 
 	def edit
