@@ -31,6 +31,12 @@ class PackagesController < ApplicationController
     end
   end
 
+  def destroy
+    user_id = @package.user_id
+    @package.destroy
+    redirect_to "/users/#{user_id}"
+  end
+
   private
 
   def package_params
