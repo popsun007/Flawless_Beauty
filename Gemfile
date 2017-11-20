@@ -18,8 +18,9 @@ gem 'masonry-rails', '0.2.1'
 gem 'aws-sdk', '< 2.0'
 gem 'hirb'
 gem 'google-api-client', '~> 0.11', require: 'google/apis/calendar_v3'
-gem 'signet', '0.7.3' #Google OAuth middleware 
+gem 'signet', '0.7.3' #Google OAuth middleware
 gem 'rails-footnotes', :group => :development
+gem 'john_hancock' #Signature pad
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

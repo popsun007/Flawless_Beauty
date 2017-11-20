@@ -23,7 +23,7 @@
 			  	</tr>
 			  	<tr>
 			  		<th><strong>Birthday</strong></th>
-			  		<td><%= @user.birthday %></td>
+			  		<td><%= @user.birthday.to_time.strftime('%m-%d') %></td>
 			  	</tr>
 		  	</table>
 		  <% if @user_appointments.present? %>
