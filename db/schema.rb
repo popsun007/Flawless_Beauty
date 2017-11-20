@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120065433) do
+ActiveRecord::Schema.define(version: 20171120070436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20171120065433) do
   end
 
   add_index "appointments", ["user_id"], name: "index_appointments_on_user_id", using: :btree
+
+  create_table "package_histories", force: :cascade do |t|
+    t.text     "signature"
+    t.integer  "user_id"
+    t.integer  "package_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "package_histories", ["package_id"], name: "index_package_histories_on_package_id", using: :btree
+  add_index "package_histories", ["user_id"], name: "index_package_histories_on_user_id", using: :btree
 
   create_table "packages", force: :cascade do |t|
     t.string   "name"
@@ -96,5 +107,7 @@ ActiveRecord::Schema.define(version: 20171120065433) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "appointments", "users"
+  add_foreign_key "package_histories", "packages"
+  add_foreign_key "package_histories", "users"
   add_foreign_key "packages", "users"
 end
