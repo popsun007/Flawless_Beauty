@@ -9,12 +9,15 @@
 		    <%= f.input :name, required: true, autofocus: true %>
 		    <%= f.input :price, required: true %>
 		    <%= f.input :count, required: true %>
-				<%= f.signature_field :signature %>
+				<%= f.simple_fields_for :package_histories do |h| %>
+					<%= h.signature_field :signature %>
+	      <% end %>
 		  </div>
 
 		  <div class="form-actions">
 				<button id="clear_button" class="btn btn-warning">Clear</button>
 		    <%= f.button :submit, "Update" %>
+				<%= link_to "Back", :back, class: "btn btn-info" %>
 		  </div>
 		<% end %>
 	 </div>

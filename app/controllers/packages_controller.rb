@@ -10,9 +10,15 @@ class PackagesController < ApplicationController
 
   def create
     @package = Package.create(package_params)
+    package_record = PackageHistory.create(
+      signature: "",
+      package_id: @package.id
+    )
 
-    if @package.persisted?
+    if @package.persisted? && package_record.persisted?
       redirect_to "/users/#{@package.user_id}"
+    else
+      render new
     end
   end
 
@@ -24,7 +30,19 @@ class PackagesController < ApplicationController
   end
 
   def update
-    if @package.update(package_params)
+    package_update = @package.update(
+      name:    package_params[:name],
+      price:   package_params[:price],
+      count:   package_params[:count],
+      user_id: package_params[:user_id]
+    )
+
+    history_update = PackageHistory.find_by(package_id: @package.id).update(
+      signature:  package_params[:package_histories_attributes]["0"][:signature],
+      package_id: @package.id
+    )
+
+    if package_update && history_update
       redirect_to "/users/#{@package.user_id}", notice: "Package was successfully updated!"
     else
       render edit
@@ -40,7 +58,7 @@ class PackagesController < ApplicationController
   private
 
   def package_params
-    params.require(:package).permit(:name, :price, :count, :signature, :user_id)
+    params.require(:package).permit(:name, :price, :count, :user_id, package_histories_attributes: [:id, :signature, :package_id])
   end
 
   def find_package
