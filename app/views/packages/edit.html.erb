@@ -24,6 +24,11 @@
 </div>
 
 <script type="text/javascript">
+//Reload the page for a temporary fix about signature pad
+if(window.location.href.substr(-2) !== "?r") {
+	window.location = window.location.href + "?r";
+}
+
 var canvas = document.getElementById("JohnHancock-canvas");
 var clear_button = document.getElementById("clear_button");
 var signature_pad = canvas.getContext("2d");
