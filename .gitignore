@@ -17,4 +17,4 @@
 /tmp
 .DS_Store
 # Ignore credentials
-config/*
+config/secrets.yml
